@@ -7,7 +7,7 @@ import googleanalytics as ga
 
 class TestCase(unittest.TestCase):
     def setUp(self):
-        accounts = ga.authenticate()
+        accounts = ga.authenticate(identity='pyga-unittest')
         if not len(accounts):
             raise Exception("Cannot proceed with unit testing: \
                 the authorized Google account does not use Google Analytics.")
